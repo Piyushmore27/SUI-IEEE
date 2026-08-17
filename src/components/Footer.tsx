@@ -63,7 +63,7 @@ export function Footer() {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.youtube.com/@suiieee-y6z"
+                href="https://youtube.com/@suiieeepathx?si=CLAiI9X8xfNO-m7W"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-red-600 transition-colors text-2xl"

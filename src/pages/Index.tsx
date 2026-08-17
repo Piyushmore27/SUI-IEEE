@@ -14,22 +14,22 @@ import HeroSection from "../components/HeroSection";
 export default function Index() {
   const upcomingEvents = [
     {
-      title: "AI Workshop Series",
-      date: "December 15, 2024",
-      description: "Learn about machine learning and AI applications",
-      type: "Workshop",
+      title: "PathX Series: Introduction to Quantum Computing",
+      date: "22 August, 2026",
+      description: "An Expert Session on “Introduction to Quantum Computing",
+      type: "IEEE PathX",
     },
     {
       title: "IEEE Day Celebration",
-      date: "December 20, 2024",
+      date: "October 06, 2026",
       description: "Annual celebration with technical presentations",
       type: "Event",
     },
     {
-      title: "Power Systems Seminar",
-      date: "January 10, 2025",
-      description: "Expert talk on renewable energy systems",
-      type: "Seminar",
+      title: "Tvishi 2.0",
+      date: "Coming Soon...",
+      description: "24-hour hackathon focused on developing IoT solutions for smart cities and sustainable development.",
+      type: "hackthon",
     },
   ];
 
@@ -103,7 +103,7 @@ export default function Index() {
                   <div className="flex justify-between items-center mb-3">
                     <Badge
                       variant={
-                        event.type === "Workshop" ? "default" : "secondary"
+                        event.type === "IEEE PathX" ? "default" : "secondary"
                       }
                       className="px-3 py-1 text-sm font-medium rounded-full"
                     >
