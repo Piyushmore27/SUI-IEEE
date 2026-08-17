@@ -28,7 +28,7 @@ export default function About() {
       name: "Kratagya Singh Raghuvanshi",
       position: "Secretary",
       email: "kratagyaraghuvanshi2@gmail.com",
-      image: "/team-img/kratagy.png",
+      image: "/team-img/kratagySingh.jpeg",
     },
     {
       name: "Sourabh Sahu",
@@ -81,8 +81,8 @@ export default function About() {
     {
       name: "Hrishikesh Shrivastava",
       position: "Member",
-      email: "ummekulsumkhan2908@gmail.com",
-      image: "/team-img/",
+      email: "hrishikeshshrivastava05@gmail.com",
+      image: "/team-img/hrishikesh.jpeg",
     },
     {
       name: "Tanvi chanderiwal",
@@ -128,7 +128,7 @@ export default function About() {
     },
     {
       name: "Vedika Sankhala",
-      position: "Membaer",
+      position: "Member",
       email: "",
       image: "/team-img/vedika.jpeg",
     },
@@ -161,6 +161,12 @@ export default function About() {
       position: "Member",
       email: "roushan211003@gmail.com",
       image: "/team-img/raushan.jpeg",
+    },
+    {
+      name: "Virendra Bagana",
+      position: "Member",
+      email: "Virendrab097@gmail.com",
+      image: "/team-img/viru.jpeg",
     },
     {
       name: "Piyush More",
@@ -271,7 +277,7 @@ export default function About() {
                 <div className="flex flex-col items-center space-y-5 text-center">
                   <div className="relative h-[150px] w-[150px] rounded-full overflow-hidden ring-4 ring-blue-600 shadow-md">
                     <img
-                      src={"/team-img/nitika vats.jpeg"}
+                      src={"/team-img/mam.jpg"}
                       alt={advisor.name}
                       className="object-cover w-full h-full"
                     />

@@ -86,7 +86,7 @@ export function Footer() {
             <h4 className="font-semibold text-lg text-white mb-4">Chapters</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li className="hover:text-blue-400 transition-colors">
-                Computer Society
+                IEEE Education Society
               </li>
               <li className="hover:text-blue-400 transition-colors">
                 Power & Energy Society
