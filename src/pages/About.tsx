@@ -130,7 +130,7 @@ export default function About() {
       name: "Vedika Sankhala",
       position: "Membaer",
       email: "",
-      image: "/team-img/",
+      image: "/team-img/vedika.jpeg",
     },
     {
       name: "Prakash Gupta",
