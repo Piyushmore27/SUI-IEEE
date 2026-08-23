@@ -22,7 +22,7 @@ export default function Events() {
       attendees: null,
       maxAttendees: null,
       description: "An Expert Session on “Introduction to Quantum Computing,” providing participants with insights into quantum technologies, emerging applications, and the future of computing through expert interaction.",
-      status: "Registration Open"
+      status: "Registration closed"
     },
     {
       id: 2,
@@ -206,6 +206,19 @@ export default function Events() {
       status: "Completed",
       outcomes: "Participants gained valuable career guidance, industry insights, and awareness of AI, 6G, and emerging technologies, helping them better prepare for their transition from campus to professional careers."
     },
+    {
+      id: 114,
+      title: "PathX Series: Introduction to Quantum Computing",
+      date: "22 August, 2026",
+      time: "06:00 PM - 07:00 PM",
+      location: "Google Meet",
+      type: "Seminar",
+      attendees: 30,
+      maxAttendees: 50,
+      description: "An Expert Session on “Introduction to Quantum Computing,” providing participants with insights into quantum technologies, emerging applications, and the future of computing through expert interaction.",
+      status: "Completed",
+      outcomes : "The session enhanced participants’ understanding of the fundamentals of quantum computing, its emerging technologies, real-world applications, and future potential. It also encouraged curiosity and awareness about career and research opportunities in the rapidly evolving field of quantum technology."
+    } 
   ];
 
   const getStatusColor = (status: string) => {
@@ -330,6 +343,17 @@ export default function Events() {
                             }}
                             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all">
                             Register Now
+                          </Button>
+                        </div>
+                      )}
+                      {event.status === "Registration closed" && (
+                        <div className="pt-4">
+                          <Button
+                            onClick={() => {
+                              window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScd5PxHnqQvA0JJId7TpDfEqLEUEkBp7GjdCBcKplhcOSor6Q/closedform";
+                            }}
+                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all">
+                            Feedback
                           </Button>
                         </div>
                       )}

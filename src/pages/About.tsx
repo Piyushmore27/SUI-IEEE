@@ -154,7 +154,7 @@ export default function About() {
       name: "Aryan dev",
       position: "Member",
       email: "aryandevsupreme@gmail.com",
-      image: "/team-img/",
+      image: "/team-img/aryan.jpeg",
     },
     {
       name: "Raushan Raj",
