@@ -69,8 +69,8 @@ export default function About() {
     {
       name: "Sanaullah Qureshi",
       position: "Managment Head",
-      email: "sanaullahqureshi630@gmail.com",
-      image: "/team-img/",
+      email: "sanaullahqureshi.help@gmail.com",
+      image: "/team-img/sana.jpeg",
     },
     {
       name: "Harsh Yadav",
