@@ -14,15 +14,15 @@ export default function Events() {
   const upcomingEvents = [
     {
       id: 1,
-      title: "PathX Series: Introduction to Quantum Computing",
-      date: "22 August, 2026",
+      title: "Staying Ahead in the K-Shaped Economy",
+      date: "18 September, 2026",
       time: "06:00 PM - 07:00 PM",
       location: "Google Meet",
       type: "Seminar",
       attendees: null,
       maxAttendees: null,
-      description: "An Expert Session on “Introduction to Quantum Computing,” providing participants with insights into quantum technologies, emerging applications, and the future of computing through expert interaction.",
-      status: "Registration closed"
+      description: "Join us for an insightful online session with Anita Saxena, Director, Zedengines India Limited, as she explores emerging economic trends, transitions, and opportunities in a K-shaped economy. Gain valuable perspectives on navigating future challenges, building resilience, and staying ahead in a changing professional landscape.",
+      status: "Registration Open"
     },
     {
       id: 2,
@@ -339,7 +339,7 @@ export default function Events() {
                         <div className="pt-4">
                           <Button
                             onClick={() => {
-                              window.location.href = "https://forms.gle/YsxQdkAeTwrnYSF1A";
+                              window.location.href = "https://forms.gle/bGSuX1BBJz1QW1Gi9";
                             }}
                             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all">
                             Register Now
