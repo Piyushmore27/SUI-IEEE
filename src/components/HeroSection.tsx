@@ -86,7 +86,17 @@ export default function HeroSection() {
               variant="outline"
               className="border-blue-400 text-blue-200 font-semibold text-base px-8 py-6 hover:bg-blue-400 hover:text-blue-950 transition-all duration-300 hover:scale-[1.04] shadow-md"
             >
+             
               <Link to="/events">Explore Events</Link>
+            </Button>
+            <Button 
+              size="lg"
+              className="border-blue-400 text-blue-200 font-semibold text-base px-8 py-6 hover:bg-blue-400 hover:text-blue-950 transition-all duration-300 hover:scale-[1.04] shadow-md"
+              onClick={() => {
+                              window.location.href = "https://forms.gle/JH8ynXb2FyB51i3u9";
+                            }}
+              >
+              Join Team
             </Button>
           </div>
         </div>
