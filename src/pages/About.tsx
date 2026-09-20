@@ -301,7 +301,7 @@ export default function About() {
         {/* Executive Committee */}
         <div className="mb-24">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-14 text-center tracking-tight">
-            Executive Committee 2024-25
+            Executive Committee 2025-26
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
