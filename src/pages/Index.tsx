@@ -14,12 +14,6 @@ import HeroSection from "../components/HeroSection";
 export default function Index() {
   const upcomingEvents = [
     {
-      title: "PathX Series: Staying Ahead in the K-Shaped Economy",
-      date: "18 September, 2026",
-      description: "An Expert Session on “Staying Ahead in the K-Shaped Economy",
-      type: "IEEE PathX",
-    },
-    {
       title: "IEEE Day Celebration",
       date: "October 06, 2026",
       description: "Annual celebration with technical presentations",

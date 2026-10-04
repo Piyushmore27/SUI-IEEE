@@ -13,18 +13,6 @@ export default function Events() {
 
   const upcomingEvents = [
     {
-      id: 1,
-      title: "Staying Ahead in the K-Shaped Economy",
-      date: "18 September, 2026",
-      time: "06:00 PM - 07:00 PM",
-      location: "Google Meet",
-      type: "Seminar",
-      attendees: null,
-      maxAttendees: null,
-      description: "Join us for an insightful online session with Anita Saxena, Director, Zedengines India Limited, as she explores emerging economic trends, transitions, and opportunities in a K-shaped economy. Gain valuable perspectives on navigating future challenges, building resilience, and staying ahead in a changing professional landscape.",
-      status: "Registration Open"
-    },
-    {
       id: 2,
       title: "IEEE Day Celebration 2024",
       date: "Coming Soon...",
@@ -63,7 +51,19 @@ export default function Events() {
   ];
 
   const pastEvents = [
-
+    {
+      id: 1,
+      title: "Staying Ahead in the K-Shaped Economy",
+      date: "18 September, 2026",
+      time: "06:00 PM - 07:00 PM",
+      location: "Google Meet",
+      type: "Seminar",
+      attendees: null,
+      maxAttendees: null,
+      description: "Join us for an insightful online session with Anita Saxena, Director, Zedengines India Limited, as she explores emerging economic trends, transitions, and opportunities in a K-shaped economy. Gain valuable perspectives on navigating future challenges, building resilience, and staying ahead in a changing professional landscape.",
+      status: "Completed",
+      youtubeUrl: "https://youtu.be/excgqydtYus?si=HKCqFPM64zyb60MW"
+    },
     {
       id: 101,
       title: "Web Development Bootcamp",
@@ -436,6 +436,19 @@ export default function Events() {
                           <p className="text-sm text-gray-600 dark:text-gray-400">
                             {event.outcomes}
                           </p>
+                        </div>
+                      )}
+
+                      {event.youtubeUrl && (
+                        <div className="pt-4">
+                          <Button
+                            onClick={() => {
+                              window.open(event.youtubeUrl, "_blank", "noopener,noreferrer");
+                            }}
+                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all"
+                          >
+                            Watch on YouTube
+                          </Button>
                         </div>
                       )}
                     </div>
