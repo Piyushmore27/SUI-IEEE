@@ -57,11 +57,12 @@ export default function Events() {
       date: "18 September, 2026",
       time: "06:00 PM - 07:00 PM",
       location: "Google Meet",
-      type: "Seminar",
-      attendees: null,
+      type: "Webinar",
+      attendees: "70+",
       maxAttendees: null,
-      description: "Join us for an insightful online session with Anita Saxena, Director, Zedengines India Limited, as she explores emerging economic trends, transitions, and opportunities in a K-shaped economy. Gain valuable perspectives on navigating future challenges, building resilience, and staying ahead in a changing professional landscape.",
+      description: "An insightful webinar exploring emerging economic trends and the dynamics of a K-shaped economy.\nThe session offered perspectives on changing opportunities, challenges, and professional growth in a rapidly evolving landscape.\nParticipants gained practical insights into navigating uncertainty and staying prepared for the future.",
       status: "Completed",
+      outcomes: "The session provided participants with valuable perspectives on economic transitions, emerging opportunities, and professional resilience. It encouraged thoughtful discussion on how students and young professionals can adapt and stay ahead in a changing economic environment.",
       youtubeUrl: "https://youtu.be/excgqydtYus?si=HKCqFPM64zyb60MW"
     },
     {
