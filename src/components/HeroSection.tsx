@@ -89,7 +89,8 @@ export default function HeroSection() {
              
               <Link to="/events">Explore Events</Link>
             </Button>
-            <Button 
+            {/* Join Team CTA - Recruitment cycle complete; uncomment to re-enable for future recruitment */}
+            {/* <Button 
               size="lg"
               className="border-blue-400 text-blue-200 font-semibold text-base px-8 py-6 hover:bg-blue-400 hover:text-blue-950 transition-all duration-300 hover:scale-[1.04] shadow-md"
               onClick={() => {
@@ -97,7 +98,7 @@ export default function HeroSection() {
                             }}
               >
               Join Team
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
