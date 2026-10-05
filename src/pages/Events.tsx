@@ -4,8 +4,95 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, Clock, MapPin, Users } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+interface RegistrationButtonProps {
+  registrationUrl?: string;
+  opensAt: string;
+  closesAt: string;
+}
+
+function RegistrationButton({
+  registrationUrl,
+  opensAt,
+  closesAt,
+}: RegistrationButtonProps) {
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const openTime = new Date(opensAt).getTime();
+  const closeTime = new Date(closesAt).getTime();
+
+  // Before registration opens: show countdown
+  if (now < openTime) {
+    const diff = openTime - now;
+    const totalSeconds = Math.max(0, Math.floor(diff / 1000));
+    const days = Math.floor(totalSeconds / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const seconds = totalSeconds % 60;
+
+    let timeString = "";
+    if (days > 0) {
+      timeString = `${days}d ${hours}h ${minutes}m`;
+    } else if (hours > 0) {
+      timeString = `${hours}h ${minutes}m ${seconds}s`;
+    } else if (minutes > 0) {
+      timeString = `${minutes}m ${seconds}s`;
+    } else {
+      timeString = `${seconds}s`;
+    }
+
+    return (
+      <div className="pt-4">
+        <Button
+          variant="outline"
+          disabled
+          className="w-full border-gray-400 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-medium cursor-not-allowed"
+        >
+          Registration opens in {timeString}
+        </Button>
+      </div>
+    );
+  }
+
+  // Active registration window: show functional Register Now button
+  if (now < closeTime) {
+    return (
+      <div className="pt-4">
+        <Button
+          onClick={() => {
+            if (registrationUrl) {
+              window.location.href = registrationUrl;
+            }
+          }}
+          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all"
+        >
+          Register Now
+        </Button>
+      </div>
+    );
+  }
+
+  // At and after registration closes: disabled Registration Closed button, no link
+  return (
+    <div className="pt-4">
+      <Button
+        disabled
+        className="w-full bg-gray-400 text-white cursor-not-allowed opacity-80"
+      >
+        Registration Closed
+      </Button>
+    </div>
+  );
+}
 
 export default function Events() {
   const [selectedTab, setSelectedTab] = useState("upcoming");
@@ -23,7 +110,9 @@ export default function Events() {
       maxAttendees: null,
       description: "A special IEEE Day celebration featuring an interactive session on the SUI-IEEE Student Branch, its activities and initiatives, followed by two engaging workshops. The celebration will conclude with a badge ceremony or a fun interactive activity, depending on feasibility.",
       status: "Registration Open",
-      registrationUrl: "https://forms.gle/tKE3MiKjTHdmTSCR7"
+      registrationUrl: "https://forms.gle/tKE3MiKjTHdmTSCR7",
+      registrationOpens: "2026-10-07T00:00:00+05:30",
+      registrationCloses: "2026-10-13T00:00:00+05:30"
     },
     {
       id: 3,
@@ -337,7 +426,13 @@ export default function Events() {
                         </span>
                       </div>
 
-                      {event.status === "Registration Open" && (
+                      {event.registrationOpens && event.registrationCloses ? (
+                        <RegistrationButton
+                          registrationUrl={event.registrationUrl}
+                          opensAt={event.registrationOpens}
+                          closesAt={event.registrationCloses}
+                        />
+                      ) : event.status === "Registration Open" && (
                         <div className="pt-4">
                           <Button
                             onClick={() => {
