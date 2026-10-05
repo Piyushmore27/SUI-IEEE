@@ -13,16 +13,17 @@ export default function Events() {
 
   const upcomingEvents = [
     {
-      id: 2,
-      title: "IEEE Day Celebration 2024",
-      date: "Coming Soon...",
-      time: "9:00 AM - 6:00 PM",
-      location: "Online",
-      type: "Celebration",
+      id: 5,
+      title: "IEEE Day Celebration 2026",
+      date: "12 October, 2026",
+      time: "10:00 AM - 02:00 PM",
+      location: "SAGE University",
+      type: "Seminar & Celebration",
       attendees: null,
       maxAttendees: null,
-      description: "Annual IEEE Day celebration featuring technical presentations, poster sessions, and networking opportunities.",
-      status: "Coming Soon"
+      description: "A special IEEE Day celebration featuring an interactive session on the SUI-IEEE Student Branch, its activities and initiatives, followed by two engaging workshops. The celebration will conclude with a badge ceremony or a fun interactive activity, depending on feasibility.",
+      status: "Registration Open",
+      registrationUrl: "https://forms.gle/tKE3MiKjTHdmTSCR7"
     },
     {
       id: 3,
@@ -340,7 +341,7 @@ export default function Events() {
                         <div className="pt-4">
                           <Button
                             onClick={() => {
-                              window.location.href = "https://forms.gle/bGSuX1BBJz1QW1Gi9";
+                              window.location.href = event.registrationUrl || "https://forms.gle/bGSuX1BBJz1QW1Gi9";
                             }}
                             className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all">
                             Register Now

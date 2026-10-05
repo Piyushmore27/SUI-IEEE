@@ -14,10 +14,10 @@ import HeroSection from "../components/HeroSection";
 export default function Index() {
   const upcomingEvents = [
     {
-      title: "IEEE Day Celebration",
-      date: "October 06, 2026",
-      description: "Annual celebration with technical presentations",
-      type: "Event",
+      title: "IEEE Day Celebration 2026",
+      date: "12 October, 2026",
+      description: "A special IEEE Day celebration featuring an interactive session on the SUI-IEEE Student Branch, its activities and initiatives, followed by two engaging workshops.",
+      type: "Seminar & Celebration",
     },
     {
       title: "Tvishi 2.0",
