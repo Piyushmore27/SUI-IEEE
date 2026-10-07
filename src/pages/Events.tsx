@@ -102,8 +102,8 @@ export default function Events() {
     {
       id: 5,
       title: "IEEE Day Celebration 2026",
-      date: "12 October, 2026",
-      time: "10:00 AM - 02:00 PM",
+      date: "15 October, 2026",
+      time: "11:00 AM - 01:30 PM",
       location: "SAGE University",
       type: "Seminar & Celebration",
       attendees: null,
@@ -111,8 +111,8 @@ export default function Events() {
       description: "A special IEEE Day celebration featuring an interactive session on the SUI-IEEE Student Branch, its activities and initiatives, followed by two engaging workshops. The celebration will conclude with a badge ceremony or a fun interactive activity, depending on feasibility.",
       status: "Registration Open",
       registrationUrl: "https://forms.gle/tKE3MiKjTHdmTSCR7",
-      registrationOpens: "2026-10-07T00:00:00+05:30",
-      registrationCloses: "2026-10-13T00:00:00+05:30"
+      registrationOpens: "2026-10-10T00:00:00+05:30",
+      registrationCloses: "2026-10-15T06:00:00+05:30"
     },
     {
       id: 3,
