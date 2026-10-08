@@ -115,6 +115,19 @@ export default function Events() {
       registrationCloses: "2026-10-15T06:00:00+05:30"
     },
     {
+      id: 6,
+      title: "Career Development and Role of Electromagnetic Simulations in Product Design",
+      date: "15 October, 2026",
+      time: "05:00 PM onwards",
+      location: "Online — Google Meet",
+      type: "Expert Talk",
+      attendees: null,
+      maxAttendees: null,
+      description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
+      status: "Registration Open",
+      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdKdLpqkR1EcwYAjEmlAk_3HVj6W23tVoa6zJZXLM8ZrTyngg/viewform?usp=header"
+    },
+    {
       id: 3,
       title: "Tvishi 2.0",
       date: "Coming Soon...",
