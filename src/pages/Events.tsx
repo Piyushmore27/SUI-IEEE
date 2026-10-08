@@ -128,6 +128,19 @@ export default function Events() {
       registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdKdLpqkR1EcwYAjEmlAk_3HVj6W23tVoa6zJZXLM8ZrTyngg/viewform?usp=header"
     },
     {
+      id: 7,
+      title: "From Campus to Career: How to Find Opportunities, Build Confidence & Stand Out",
+      date: "16 October 2026",
+      time: "6:00 PM onwards",
+      location: "Online — Google Meet",
+      type: "Expert Talk",
+      attendees: null,
+      maxAttendees: null,
+      description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
+      status: "Registration Open",
+      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSciN34bZlJAKObeLHMMyQj-UUWupA67fT_fOTWiSQy85DrTAg/viewform?usp=header"
+    },
+    {
       id: 3,
       title: "Tvishi 2.0",
       date: "Coming Soon...",

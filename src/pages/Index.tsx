@@ -26,6 +26,12 @@ export default function Index() {
       type: "Expert Talk",
     },
     {
+      title: "From Campus to Career: How to Find Opportunities, Build Confidence & Stand Out",
+      date: "16 October 2026",
+      description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
+      type: "Expert Talk",
+    },
+    {
       title: "Tvishi 2.0",
       date: "Coming Soon...",
       description: "24-hour hackathon focused on developing IoT solutions for smart cities and sustainable development.",
