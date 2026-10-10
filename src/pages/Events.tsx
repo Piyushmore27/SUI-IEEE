@@ -102,17 +102,17 @@ export default function Events() {
     {
       id: 5,
       title: "IEEE Day Celebration 2026",
-      date: "15 October, 2026",
-      time: "11:00 AM - 01:30 PM",
-      location: "SAGE University",
+      date: "13 October 2026",
+      time: "10:30 AM – 12:00 Noon",
+      location: "IMS Seminar Hall, SAGE University Indore",
       type: "Seminar & Celebration",
       attendees: null,
       maxAttendees: null,
-      description: "A special IEEE Day celebration featuring an interactive session on the SUI-IEEE Student Branch, its activities and initiatives, followed by two engaging workshops. The celebration will conclude with a badge ceremony or a fun interactive activity, depending on feasibility.",
+      description: "Celebrate IEEE Day 2026 with a Cyber Security Awareness Session featuring guest speaker Mr. Rajesh Dandotiya (ADCP), Additional Deputy Commissioner of Police, Crime Branch, Indore. The session covers emerging cyber threats, online scams, data protection, and practical digital safety. Special highlight: IEEE Badge Distribution & Oath Ceremony. Open to all students with free registration and a Certificate of Participation for complete attendance.",
       status: "Registration Open",
       registrationUrl: "https://forms.gle/tKE3MiKjTHdmTSCR7",
       registrationOpens: "2026-10-10T00:00:00+05:30",
-      registrationCloses: "2026-10-15T06:00:00+05:30"
+      registrationCloses: "2026-10-13T10:00:00+05:30"
     },
     {
       id: 6,

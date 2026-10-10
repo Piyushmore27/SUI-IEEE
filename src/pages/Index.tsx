@@ -15,8 +15,8 @@ export default function Index() {
   const upcomingEvents = [
     {
       title: "IEEE Day Celebration 2026",
-      date: "15 October, 2026",
-      description: "A special IEEE Day celebration featuring an interactive session on the SUI-IEEE Student Branch, its activities and initiatives, followed by two engaging workshops.",
+      date: "13 October 2026",
+      description: "Celebrate IEEE Day 2026 with a Cyber Security Awareness Session featuring guest speaker Mr. Rajesh Dandotiya (ADCP), Additional Deputy Commissioner of Police, Crime Branch, Indore. The session covers emerging cyber threats, online scams, data protection, and practical digital safety. Special highlight: IEEE Badge Distribution & Oath Ceremony. Open to all students with free registration and a Certificate of Participation for complete attendance.",
       type: "Seminar & Celebration",
     },
     {
