@@ -100,21 +100,6 @@ export default function Events() {
 
   const upcomingEvents = [
     {
-      id: 5,
-      title: "IEEE Day Celebration 2026",
-      date: "13 October 2026",
-      time: "10:30 AM – 12:00 Noon",
-      location: "IMS Seminar Hall, SAGE University Indore",
-      type: "Seminar & Celebration",
-      attendees: null,
-      maxAttendees: null,
-      description: "Celebrate IEEE Day 2026 with a Cyber Security Awareness Session featuring guest speaker Mr. Rajesh Dandotiya (ADCP), Additional Deputy Commissioner of Police, Crime Branch, Indore. The session covers emerging cyber threats, online scams, data protection, and practical digital safety. Special highlight: IEEE Badge Distribution & Oath Ceremony. Open to all students with free registration and a Certificate of Participation for complete attendance.",
-      status: "Registration Open",
-      registrationUrl: "https://forms.gle/tKE3MiKjTHdmTSCR7",
-      registrationOpens: "2026-10-10T00:00:00+05:30",
-      registrationCloses: "2026-10-13T10:00:00+05:30"
-    },
-    {
       id: 6,
       title: "Career Development and Role of Electromagnetic Simulations in Product Design",
       date: "15 October, 2026",
@@ -167,6 +152,18 @@ export default function Events() {
   ];
 
   const pastEvents = [
+    {
+      id: 5,
+      title: "IEEE Day Celebration 2026",
+      date: "13 October 2026",
+      time: "10:30 AM – 12:00 Noon",
+      location: "IMS Seminar Hall, SAGE University Indore",
+      type: "Seminar & Celebration",
+      attendees: null,
+      maxAttendees: null,
+      description: "An IEEE Day special session focused on cybersecurity awareness, featuring Mr. Rajesh Dandotiya (ADCP), Additional Deputy Commissioner of Police, Crime Branch, Indore. The session covered emerging cyber threats, online scams, data protection, and practical ways to improve digital safety. Special highlight: IEEE Badge Distribution & Oath Ceremony.",
+      status: "Completed"
+    },
     {
       id: 1,
       title: "Staying Ahead in the K-Shaped Economy",

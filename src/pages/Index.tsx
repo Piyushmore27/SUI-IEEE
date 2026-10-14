@@ -14,12 +14,6 @@ import HeroSection from "../components/HeroSection";
 export default function Index() {
   const upcomingEvents = [
     {
-      title: "IEEE Day Celebration 2026",
-      date: "13 October 2026",
-      description: "Celebrate IEEE Day 2026 with a Cyber Security Awareness Session featuring guest speaker Mr. Rajesh Dandotiya (ADCP), Additional Deputy Commissioner of Police, Crime Branch, Indore. The session covers emerging cyber threats, online scams, data protection, and practical digital safety. Special highlight: IEEE Badge Distribution & Oath Ceremony. Open to all students with free registration and a Certificate of Participation for complete attendance.",
-      type: "Seminar & Celebration",
-    },
-    {
       title: "Career Development and Role of Electromagnetic Simulations in Product Design",
       date: "15 October, 2026",
       description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
