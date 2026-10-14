@@ -19,10 +19,10 @@ export default function About() {
       image: "/team-img/sanjay.jpeg",
     },
     {
-      name: "Khushi Dewangan",
+      name: "Sanaullah Qureshi",
       position: "Vice Chairperson",
-      email: "khushidewangan474@gmail.com",
-      image: "/team-img/khushi.png",
+      email: "sanaullahqureshi.help@gmail.com",
+      image: "/team-img/sana.jpeg",
     },
     {
       name: "Kratagya Singh Raghuvanshi",
@@ -67,16 +67,10 @@ export default function About() {
       image: "/team-img/ritima.png",
     },
     {
-      name: "Sanaullah Qureshi",
-      position: "Managment Head",
-      email: "sanaullahqureshi.help@gmail.com",
-      image: "/team-img/sana.jpeg",
-    },
-    {
-      name: "Harsh Yadav",
+      name: "Khushi Dewangan",
       position: "Member",
-      email: "harshyadav626436@gmail.com",
-      image: "/team-img/",
+      email: "khushidewangan474@gmail.com",
+      image: "/team-img/khushi.png",
     },
     {
       name: "Hrishikesh Shrivastava",
@@ -115,34 +109,10 @@ export default function About() {
       image: "/team-img/gaurav.jpeg",
     },
     {
-      name: "Srishti Pardeshi",
-      position: "Member",
-      email: "",
-      image: "/team-img/",
-    },
-    {
-      name: "Aachal Shah",
-      position: "Member",
-      email: "saachal937@gmail.com",
-      image: "/team-img/",
-    },
-    {
       name: "Vedika Sankhala",
       position: "Member",
       email: "",
       image: "/team-img/vedika.jpeg",
-    },
-    {
-      name: "Prakash Gupta",
-      position: "Member",
-      email: "prakashgupta9158@gmail.com",
-      image: "/team-img/prakash.jpeg",
-    },
-    {
-      name: "Yashika Shinde",
-      position: "Member",
-      email: "yashikashinde44@gmail.com",
-      image: "/team-img/",
     },
     {
       name: "Ujjwal Pandey",
@@ -161,12 +131,6 @@ export default function About() {
       position: "Member",
       email: "roushan211003@gmail.com",
       image: "/team-img/raushan.jpeg",
-    },
-    {
-      name: "Virendra Bagana",
-      position: "Member",
-      email: "Virendrab097@gmail.com",
-      image: "/team-img/viru.jpeg",
     },
     {
       name: "Piyush More",
