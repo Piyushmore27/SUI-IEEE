@@ -5,6 +5,35 @@ import { motion, AnimatePresence } from "framer-motion";
 const categories = ["All", "Workshop", "Seminar", "Event"];
 
 const galleryImagesData = [
+  // Events (New)
+  {
+    url: "/gallery-img/E16.jpg",
+    aspectRatio: "aspect-[4/3]",
+    category: "Event",
+    alt: "Cybersecurity Awareness Session",
+    description: "A photograph from the cybersecurity awareness session featuring the event backdrop and award presentation.",
+  },
+  {
+    url: "/gallery-img/E17.jpg",
+    aspectRatio: "aspect-[3/4]",
+    category: "Event",
+    alt: "IEEE Badge Distribution — Sanjay Rai, Chairperson",
+    description: "An IEEE badge is being presented to Sanjay Rai, Chairperson of the SUI-IEEE Student Branch.",
+  },
+  {
+    url: "/gallery-img/E18.jpg",
+    aspectRatio: "aspect-[4/3]",
+    category: "Event",
+    alt: "IEEE Oath Ceremony",
+    description: "Students and participants taking the IEEE oath during the celebration.",
+  },
+  {
+    url: "/gallery-img/E19.jpg",
+    aspectRatio: "aspect-[4/3]",
+    category: "Event",
+    alt: "IEEE Day Celebration",
+    description: "A group photograph from the IEEE Day celebration.",
+  },
   // Workshop
   { url: "/gallery-img/W2.jpg", aspectRatio: "aspect-square", category: "Workshop", alt: "Team Collaboration" },
   { url: "/gallery-img/W1.jpg", aspectRatio: "aspect-video", category: "Workshop", alt: "Presentation Session" },

@@ -22,7 +22,7 @@ export default function About() {
       name: "Sanaullah Qureshi",
       position: "Vice Chairperson",
       email: "sanaullahqureshi.help@gmail.com",
-      image: "/team-img/sana.jpeg",
+      image: "/team-img/sana.jpg",
     },
     {
       name: "Kratagya Singh Raghuvanshi",
