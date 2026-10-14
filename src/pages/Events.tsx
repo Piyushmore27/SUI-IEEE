@@ -94,6 +94,53 @@ function RegistrationButton({
   );
 }
 
+interface FeedbackButtonProps {
+  feedbackUrl?: string;
+  opensAt: string;
+  closesAt: string;
+}
+
+function FeedbackButton({
+  feedbackUrl,
+  opensAt,
+  closesAt,
+}: FeedbackButtonProps) {
+  const [now, setNow] = useState(() => Date.now());
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setNow(Date.now());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const openTime = new Date(opensAt).getTime();
+  const closeTime = new Date(closesAt).getTime();
+
+  // Hidden before opening time and at/after closing time
+  if (now < openTime || now >= closeTime || !feedbackUrl) {
+    return null;
+  }
+
+  return (
+    <div className="pt-2">
+      <Button
+        asChild
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all"
+      >
+        <a
+          id="feedback-form-dr-cj-reddy"
+          href={feedbackUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Feedback Form
+        </a>
+      </Button>
+    </div>
+  );
+}
+
 export default function Events() {
   const [selectedTab, setSelectedTab] = useState("upcoming");
   const navigate = useNavigate();
@@ -110,7 +157,10 @@ export default function Events() {
       maxAttendees: null,
       description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
       status: "Registration Open",
-      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdKdLpqkR1EcwYAjEmlAk_3HVj6W23tVoa6zJZXLM8ZrTyngg/viewform?usp=header"
+      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdKdLpqkR1EcwYAjEmlAk_3HVj6W23tVoa6zJZXLM8ZrTyngg/viewform?usp=header",
+      feedbackUrl: "https://docs.google.com/forms/d/e/1FAIpQLSelkB5SVca6h3okD1IUKyDfb6M2O0Skh0nff17EZMnIiKoOHg/viewform?usp=publish-editor",
+      feedbackOpens: "2026-10-15T18:20:00+05:30",
+      feedbackCloses: "2026-10-15T23:55:00+05:30"
     },
     {
       id: 7,
@@ -498,6 +548,14 @@ export default function Events() {
                             Registration Closed
                           </Button>
                         </div>
+                      )}
+
+                      {event.feedbackOpens && event.feedbackCloses && event.feedbackUrl && (
+                        <FeedbackButton
+                          feedbackUrl={event.feedbackUrl}
+                          opensAt={event.feedbackOpens}
+                          closesAt={event.feedbackCloses}
+                        />
                       )}
                     </div>
                   </CardContent>
