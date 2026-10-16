@@ -95,12 +95,14 @@ function RegistrationButton({
 }
 
 interface FeedbackButtonProps {
+  id?: string;
   feedbackUrl?: string;
   opensAt: string;
   closesAt: string;
 }
 
 function FeedbackButton({
+  id = "feedback-form-dr-cj-reddy",
   feedbackUrl,
   opensAt,
   closesAt,
@@ -129,7 +131,7 @@ function FeedbackButton({
         className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all"
       >
         <a
-          id="feedback-form-dr-cj-reddy"
+          id={id}
           href={feedbackUrl}
           target="_blank"
           rel="noopener noreferrer"
@@ -147,22 +149,6 @@ export default function Events() {
 
   const upcomingEvents = [
     {
-      id: 6,
-      title: "Career Development and Role of Electromagnetic Simulations in Product Design",
-      date: "15 October, 2026",
-      time: "05:00 PM onwards",
-      location: "Online — Google Meet",
-      type: "Expert Talk",
-      attendees: null,
-      maxAttendees: null,
-      description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
-      status: "Registration Open",
-      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdKdLpqkR1EcwYAjEmlAk_3HVj6W23tVoa6zJZXLM8ZrTyngg/viewform?usp=header",
-      feedbackUrl: "https://docs.google.com/forms/d/e/1FAIpQLSelkB5SVca6h3okD1IUKyDfb6M2O0Skh0nff17EZMnIiKoOHg/viewform?usp=publish-editor",
-      feedbackOpens: "2026-10-15T18:20:00+05:30",
-      feedbackCloses: "2026-10-15T23:55:00+05:30"
-    },
-    {
       id: 7,
       title: "From Campus to Career: How to Find Opportunities, Build Confidence & Stand Out",
       date: "16 October 2026",
@@ -173,7 +159,11 @@ export default function Events() {
       maxAttendees: null,
       description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
       status: "Registration Open",
-      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSciN34bZlJAKObeLHMMyQj-UUWupA67fT_fOTWiSQy85DrTAg/viewform?usp=header"
+      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSciN34bZlJAKObeLHMMyQj-UUWupA67fT_fOTWiSQy85DrTAg/viewform?usp=header",
+      feedbackUrl: "https://docs.google.com/forms/d/e/1FAIpQLScS5zHXys1Xl00nuPTXhxJ2pQ4tZVT40yKfGqk7bQNo50O21g/viewform?usp=header",
+      feedbackOpens: "2026-10-16T18:30:00+05:30",
+      feedbackCloses: "2026-10-16T23:50:00+05:30",
+      feedbackId: "feedback-form-deepika-mishra"
     },
     {
       id: 3,
@@ -202,6 +192,19 @@ export default function Events() {
   ];
 
   const pastEvents = [
+    {
+      id: 6,
+      title: "Career Development and Role of Electromagnetic Simulations in Product Design",
+      date: "15 October, 2026",
+      time: "05:00 PM onwards",
+      location: "Online — Google Meet",
+      type: "Expert Talk",
+      attendees: "50+ Attendees",
+      maxAttendees: null,
+      description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
+      status: "Completed",
+      youtubeUrl: "https://youtu.be/oGlLHhQnXgg?si=ksntarcMcgxLbCiu"
+    },
     {
       id: 5,
       title: "IEEE Day Celebration 2026",
@@ -552,6 +555,7 @@ export default function Events() {
 
                       {event.feedbackOpens && event.feedbackCloses && event.feedbackUrl && (
                         <FeedbackButton
+                          id={event.feedbackId}
                           feedbackUrl={event.feedbackUrl}
                           opensAt={event.feedbackOpens}
                           closesAt={event.feedbackCloses}
@@ -603,7 +607,11 @@ export default function Events() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <Users className="h-4 w-4 text-blue-500" />
-                        <span>{event.attendees} attendees</span>
+                        <span>
+                          {typeof event.attendees === "string" && event.attendees.toLowerCase().includes("attendee")
+                            ? event.attendees
+                            : `${event.attendees} attendees`}
+                        </span>
                       </div>
 
                       {event.outcomes && (

@@ -14,12 +14,6 @@ import HeroSection from "../components/HeroSection";
 export default function Index() {
   const upcomingEvents = [
     {
-      title: "Career Development and Role of Electromagnetic Simulations in Product Design",
-      date: "15 October, 2026",
-      description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
-      type: "Expert Talk",
-    },
-    {
       title: "From Campus to Career: How to Find Opportunities, Build Confidence & Stand Out",
       date: "16 October 2026",
       description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
