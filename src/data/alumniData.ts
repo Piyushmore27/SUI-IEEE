@@ -2,20 +2,22 @@
 export interface ExperienceItem {
   role: string;
   organization: string;
-  period: string;
-  description: string;
+  period?: string;
+  description?: string;
 }
 
 export interface ResearchItem {
   type: string;
   title: string;
-  applicationNumber: string;
+  applicationNumber?: string;
   description: string[];
 }
 
 export interface EducationItem {
   institution: string;
   program: string;
+  period?: string;
+  details?: string;
 }
 
 export interface IeeeJourney {
@@ -49,19 +51,18 @@ export const alumniData: Alumni[] = [
   {
     slug: "raj-thakur",
     name: "Raj Thakur",
-    image: "/alumni-img/raj-thakur.jpg",
+    image: "/alumni-img/raj-thakur.png",
     title: "Optima Developer",
     organization: "Aurbient Technologies",
     location: "Indore, Madhya Pradesh, India",
     linkedinUrl: "https://www.linkedin.com/in/raj-thakur-9a4987251",
     introduction:
-      "Raj Thakur is an Optima Developer at Aurbient Technologies, specializing in AI-driven solutions, intelligent business systems, and software automation. A Computer Technology (Artificial Intelligence) alumnus of SAGE University Indore, he previously served as Chairperson of the SUI-IEEE Student Branch from June 2024 to November 2025, contributing to student leadership and event management.",
+      "Former Chairperson of the SUI-IEEE Student Branch, Raj Thakur led student-focused IEEE initiatives and initiated the IEEE PathX Forum at SAGE University Indore. His tenure from June 2024 to November 2025 reflects his involvement in student leadership, event management, and fostering a culture of technical learning and professional development.",
     biography: [
-      "Raj Thakur is a technology professional working at the intersection of artificial intelligence, software development, business automation, and intelligent systems. He is currently an Optima Developer at Aurbient Technologies, where his professional focus includes AI-driven solutions, intelligent business systems, operational intelligence, automation, and scalable digital infrastructure.",
-      "He pursued Computer Technology with a specialization in Artificial Intelligence at SAGE University Indore, developing an academic foundation aligned with his interests in emerging technologies and software innovation. His professional journey includes experience in AI development, customer relationship management systems, and data science. During his internship at Parul Chemicals, he developed a customer relationship management (CRM) system for the company's sales and marketing team. Earlier, as a Data Science Intern at CodSoft, he gained experience in exploratory data analysis and working with Pandas.",
-      "Raj also contributed to the SUI-IEEE Student Branch at SAGE University Indore, serving as Chairperson from June 2024 to November 2025. His responsibilities included team leadership and event management, providing experience in coordinating student initiatives and supporting the branch's activities.",
-      "His interest in research and innovation is reflected in his co-authorship of the published Indian patent application titled 'A System and Method for Autonomous Organ Transport with Predictive Preservation and Cross-Domain UAV Control' (Application No. 202621048517 A). The application concerns the intersection of autonomous UAV technology, predictive preservation, and healthcare logistics.",
-      "Raj's professional interests span artificial intelligence, computer vision, intelligent workflows, software automation, enterprise systems, and operational intelligence. His journey reflects a combination of technical development, applied problem-solving, research participation, and student leadership.",
+      "Raj Thakur is an alumnus of SAGE University Indore, where he studied Computer Technology with a specialization in Artificial Intelligence. During his time at the university, he served as Chairperson of the SUI-IEEE Student Branch, leading student-focused initiatives and initiating the IEEE PathX Forum to encourage knowledge sharing, technical learning, and professional development among students.",
+      "His professional experience includes working as an AI Developer Intern at Parul Chemicals, where he developed a customer relationship management (CRM) system for the sales and marketing team, and as a Data Science Intern at CodSoft, where he gained experience in exploratory data analysis and Pandas. He is currently associated with Aurbient Technologies as an Optima Developer.",
+      "Raj has also contributed to research and innovation in autonomous systems and healthcare logistics. He is a co-author of the published Indian patent application titled 'A System and Method for Autonomous Organ Transport with Predictive Preservation and Cross-Domain UAV Control' (Application No. 202621048517 A). The application explores the use of autonomous UAV technology and predictive preservation in organ transportation.",
+      "His interests include artificial intelligence, software development, automation, data science, and emerging technologies. Through his leadership at SUI-IEEE and his continued professional development, Raj's journey connects student community engagement, technical learning, and innovation.",
     ],
     ieeeJourney: {
       role: "Chairperson",
@@ -137,6 +138,94 @@ export const alumniData: Alumni[] = [
       "Technical Project Leadership",
       "Team Leadership and Event Management",
       "Strategic Planning and Business Consulting",
+    ],
+  },
+  {
+    slug: "neelesh-singh-choursiya",
+    name: "Neelesh Singh Choursiya",
+    image: "/alumni-img/neelesh-singh-choursiya.png",
+    title: "Data Analyst",
+    organization: "Parul Chemicals",
+    linkedinUrl: "https://www.linkedin.com/in/neeleshsinghchoursiya",
+    introduction:
+      "Neelesh Singh Choursiya is an AI/ML engineer and alumnus of SAGE University Indore. A former Vice Chair of the SUI-IEEE Student Branch, he contributed to IEEE activities and student engagement while developing interests in machine learning, Generative AI, data analytics, and applied AI systems.",
+    biography: [
+      "Neelesh Singh Choursiya is an AI/ML engineer and alumnus of SAGE University Indore, where he completed his Bachelor of Technology in Artificial Intelligence with a CGPA of 8.24. During his university journey, he served as Vice Chair of the SUI-IEEE Student Branch from June 2024 to December 2025, spearheading IEEE activities and events for more than 200 students and promoting innovation in artificial intelligence and machine learning. He also contributed to the IEEE community through student-focused initiatives and technical engagement.",
+      "Professionally, Neelesh works as a Data Analyst at Parul Chemicals, where his experience includes data cleaning, preprocessing, exploratory data analysis, and predictive modelling. His earlier experience includes an AI Engineer Internship at Codenscious Technologies, an AI Developer role at Aurbient Technologies, and an Oracle Fusion Technical Consultant Internship at Rainbow Cons. His work and interests span machine learning, Generative AI, large language models (LLMs), retrieval-augmented generation (RAG), natural language processing (NLP), and production-oriented ML systems.",
+      "Neelesh has also contributed to research and academic publishing, including research published on IEEE Xplore and book chapters on artificial intelligence and machine learning in marketing and federated learning. His projects include RAG-based applications, NLP systems for market sentiment analysis, sales forecasting pipelines, and LLM-powered assistants. He is interested in bridging research with practical applications and building reliable AI systems that address real-world challenges.",
+      "His journey reflects a combination of student leadership, research engagement, data analytics, and applied AI development.",
+    ],
+    ieeeJourney: {
+      role: "Vice Chair",
+      period: "June 2024 – December 2025",
+      description: [
+        "Neelesh Singh Choursiya served as Vice Chair of the SUI-IEEE Student Branch at SAGE University Indore from June 2024 to December 2025. During his tenure, he spearheaded IEEE activities and events for more than 200 students, promoted innovation in artificial intelligence and machine learning, and contributed to student-focused initiatives and technical engagement.",
+      ],
+    },
+    experience: [
+      {
+        role: "Data Analyst",
+        organization: "Parul Chemicals",
+        period: "Current role",
+        description:
+          "Experience includes data cleaning, preprocessing, exploratory data analysis, and predictive modelling.",
+      },
+      {
+        role: "AI Engineer Intern",
+        organization: "Codenscious Technologies",
+      },
+      {
+        role: "AI Developer",
+        organization: "Aurbient Technologies",
+      },
+      {
+        role: "Oracle Fusion Technical Consultant Intern",
+        organization: "Rainbow Cons.",
+      },
+    ],
+    research: [
+      {
+        type: "Academic Publishing",
+        title: "Research and Academic Publishing",
+        description: [
+          "Research published on IEEE Xplore.",
+          "Book chapters on artificial intelligence and machine learning in marketing.",
+          "Book chapters on federated learning.",
+        ],
+      },
+      {
+        type: "Projects",
+        title: "Projects",
+        description: [
+          "RAG-based applications.",
+          "NLP systems for market sentiment analysis.",
+          "Sales forecasting pipelines.",
+          "LLM-powered assistants.",
+        ],
+      },
+    ],
+    education: [
+      {
+        institution: "SAGE University Indore",
+        program: "Bachelor of Technology (B.Tech) in Artificial Intelligence",
+        period: "June 2022 – June 2026",
+        details: "CGPA: 8.24",
+      },
+    ],
+    expertise: [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Generative AI",
+      "Retrieval-Augmented Generation (RAG)",
+      "Natural Language Processing (NLP)",
+      "Deep Learning",
+      "Python",
+      "PyTorch",
+      "LangChain",
+      "FastAPI",
+      "Data Analytics",
+      "Predictive Modelling",
+      "Research",
     ],
   },
 ];

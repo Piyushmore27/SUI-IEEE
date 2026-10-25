@@ -210,13 +210,17 @@ export default function AlumniProfile() {
                           </span>{" "}
                           {exp.organization}
                         </h3>
-                        <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-full w-fit">
-                          {exp.period}
-                        </span>
+                        {exp.period && (
+                          <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-full w-fit">
+                            {exp.period}
+                          </span>
+                        )}
                       </div>
-                      <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed pt-1">
-                        {exp.description}
-                      </p>
+                      {exp.description && (
+                        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed pt-1">
+                          {exp.description}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -242,12 +246,14 @@ export default function AlumniProfile() {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white leading-snug">
                       {res.title}
                     </h3>
-                    <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                      Application Number:{" "}
-                      <span className="font-mono font-semibold text-indigo-600 dark:text-indigo-400">
-                        {res.applicationNumber}
-                      </span>
-                    </p>
+                    {res.applicationNumber && (
+                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                        Application Number:{" "}
+                        <span className="font-mono font-semibold text-indigo-600 dark:text-indigo-400">
+                          {res.applicationNumber}
+                        </span>
+                      </p>
+                    )}
                     <div className="space-y-3 text-gray-700 dark:text-gray-300 text-base leading-relaxed pt-1">
                       {res.description.map((para, pIdx) => (
                         <p key={pIdx}>{para}</p>
@@ -271,12 +277,24 @@ export default function AlumniProfile() {
               <CardContent className="p-0 space-y-4">
                 {alumni.education.map((edu, idx) => (
                   <div key={idx} className="space-y-1">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">
-                      {edu.institution}
-                    </h3>
+                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white">
+                        {edu.institution}
+                      </h3>
+                      {edu.period && (
+                        <span className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 rounded-full w-fit">
+                          {edu.period}
+                        </span>
+                      )}
+                    </div>
                     <p className="text-indigo-600 dark:text-indigo-400 font-medium text-base">
                       {edu.program}
                     </p>
+                    {edu.details && (
+                      <p className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                        {edu.details}
+                      </p>
+                    )}
                   </div>
                 ))}
               </CardContent>
