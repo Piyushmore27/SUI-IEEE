@@ -12,6 +12,7 @@ const navItems = [
   { name: "Events", path: "/events" },
   // { name: "Chapters", path: "/chapters" },
   { name: "Gallery", path: "/gallery" },
+  { name: "Alumni", path: "/alumni" },
   { name: "Contact", path: "/contact" },
 ];
 
