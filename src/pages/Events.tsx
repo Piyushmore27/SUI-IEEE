@@ -149,23 +149,6 @@ export default function Events() {
 
   const upcomingEvents = [
     {
-      id: 7,
-      title: "From Campus to Career: How to Find Opportunities, Build Confidence & Stand Out",
-      date: "16 October 2026",
-      time: "6:00 PM onwards",
-      location: "Online — Google Meet",
-      type: "Expert Talk",
-      attendees: null,
-      maxAttendees: null,
-      description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
-      status: "Registration Open",
-      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSciN34bZlJAKObeLHMMyQj-UUWupA67fT_fOTWiSQy85DrTAg/viewform?usp=header",
-      feedbackUrl: "https://docs.google.com/forms/d/e/1FAIpQLScS5zHXys1Xl00nuPTXhxJ2pQ4tZVT40yKfGqk7bQNo50O21g/viewform?usp=header",
-      feedbackOpens: "2026-10-16T18:30:00+05:30",
-      feedbackCloses: "2026-10-16T23:50:00+05:30",
-      feedbackId: "feedback-form-deepika-mishra"
-    },
-    {
       id: 3,
       title: "Tvishi 2.0",
       date: "Coming Soon...",
@@ -193,13 +176,25 @@ export default function Events() {
 
   const pastEvents = [
     {
+      id: 7,
+      title: "From Campus to Career: How to Find Opportunities, Build Confidence & Stand Out",
+      date: "16 October 2026",
+      time: "6:00 PM onwards",
+      location: "Online — Google Meet",
+      type: "Expert Talk",
+      attendees: "50+ Attendees",
+      maxAttendees: null,
+      description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
+      status: "Completed"
+    },
+    {
       id: 6,
       title: "Career Development and Role of Electromagnetic Simulations in Product Design",
       date: "15 October, 2026",
       time: "05:00 PM onwards",
       location: "Online — Google Meet",
       type: "Expert Talk",
-      attendees: "50+ Attendees",
+      attendees: "60+ Attendees",
       maxAttendees: null,
       description: "An expert talk exploring career development and the role of electromagnetic simulations in modern product design. Dr. C. J. Reddy, Siemens Fellow at Siemens Digital Industries Software and 2026 IEEE AP-S President, will share insights from his extensive experience in computational electromagnetics, industry, research, and professional leadership. The session will also include an interactive Open Q&A.",
       status: "Completed",
