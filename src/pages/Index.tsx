@@ -9,10 +9,27 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Users, Newspaper, Image } from "lucide-react";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import HeroSection from "../components/HeroSection";
 
 export default function Index() {
   const upcomingEvents = [
+    {
+      title: "From Campus to Enterprise",
+      subtitle: "Building a Career in Generative AI & Digital Transformation",
+      series: "SUI-IEEE PATHX SERIES",
+      date: "28 November 2026",
+      time: "5:00 PM onwards (IST)",
+      location: "Online — Google Meet",
+      speaker: "Vishnuprasad T V",
+      speakerRole: "Manager, Generative AI Consulting, EY (Big 4)",
+      certificate: "Certificate of Participation",
+      description: "Join us for an insightful online session in the SUI-IEEE PATHX Series, 'From Campus to Enterprise: Building a Career in Generative AI & Digital Transformation.' Featuring Vishnuprasad T V, Manager, Generative AI Consulting at EY (Big 4), this session focuses on navigating the transition from campus to the enterprise world and exploring career opportunities and professional development in Generative AI and digital transformation. Mode: Online via Google Meet. Certificate of Participation will be provided.",
+      type: "IEEE PathX",
+      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdI-Z5PlM1n8F6QZ8WFadxkruYb9hXVN4Et6kjq1w_CKTcVvw/viewform?usp=header",
+      speakerLinkedinUrl: "https://www.linkedin.com/in/vishnuprasad-cmd",
+      whatsappCommunityUrl: "https://chat.whatsapp.com/JgWN1dVi228DWgN98xS8X6"
+    },
     {
       title: "Tvishi 2.0",
       date: "Coming Soon...",
@@ -81,35 +98,111 @@ export default function Index() {
             <div className="mt-4 w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {upcomingEvents.map((event, index) => (
               <Card
                 key={index}
-                className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
               >
                 <CardHeader>
                   <div className="flex justify-between items-center mb-3">
-                    <Badge
-                      variant={
-                        event.type === "IEEE PathX" ? "default" : "secondary"
-                      }
-                      className="px-3 py-1 text-sm font-medium rounded-full"
-                    >
-                      {event.type}
-                    </Badge>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="flex flex-wrap gap-2">
+                      <Badge
+                        variant={
+                          event.type === "IEEE PathX" ? "default" : "secondary"
+                        }
+                        className="px-3 py-1 text-sm font-medium rounded-full"
+                      >
+                        {event.type}
+                      </Badge>
+                      {"series" in event && event.series && (
+                        <Badge variant="outline" className="text-xs font-semibold border-blue-500/40 text-blue-600 dark:text-blue-400">
+                          {event.series}
+                        </Badge>
+                      )}
+                    </div>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">
                       {event.date}
                     </span>
                   </div>
                   <CardTitle className="text-xl font-semibold text-gray-900 dark:text-white">
                     {event.title}
                   </CardTitle>
+                  {"subtitle" in event && event.subtitle && (
+                    <p className="text-xs font-semibold text-blue-600 dark:text-blue-400">
+                      {event.subtitle}
+                    </p>
+                  )}
                 </CardHeader>
 
-                <CardContent>
-                  <CardDescription className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {event.description}
-                  </CardDescription>
+                <CardContent className="flex flex-col justify-between flex-grow">
+                  <div>
+                    {"speaker" in event && event.speaker && (
+                      <p className="text-xs font-semibold text-gray-800 dark:text-gray-200 mb-2">
+                        Speaker: {event.speaker} {"speakerRole" in event && event.speakerRole ? `(${event.speakerRole})` : ""}
+                      </p>
+                    )}
+                    <CardDescription className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                      {event.description}
+                    </CardDescription>
+                  </div>
+
+                  {"registrationUrl" in event && event.registrationUrl && (
+                    <div className="pt-2 space-y-2">
+                      <Button
+                        asChild
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:opacity-90 transition-all text-sm py-2"
+                      >
+                        <a
+                          href={event.registrationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Register Now
+                        </a>
+                      </Button>
+                      {("speakerLinkedinUrl" in event && event.speakerLinkedinUrl || "whatsappCommunityUrl" in event && event.whatsappCommunityUrl) && (
+                        <div className="grid grid-cols-2 gap-2 pt-1">
+                          {"speakerLinkedinUrl" in event && event.speakerLinkedinUrl && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              asChild
+                              className="w-full border-blue-500/30 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/40 text-xs"
+                            >
+                              <a
+                                href={event.speakerLinkedinUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-1.5"
+                              >
+                                <FaLinkedin className="h-3.5 w-3.5 text-[#0077B5]" />
+                                <span>LinkedIn</span>
+                              </a>
+                            </Button>
+                          )}
+                          {"whatsappCommunityUrl" in event && event.whatsappCommunityUrl && (
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              asChild
+                              className="w-full border-green-500/30 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/40 text-xs"
+                            >
+                              <a
+                                href={event.whatsappCommunityUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-1.5"
+                              >
+                                <FaWhatsapp className="h-3.5 w-3.5 text-[#25D366]" />
+                                <span>WhatsApp</span>
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}

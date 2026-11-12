@@ -3,7 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, Users, Award, User } from "lucide-react";
+import { FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -148,6 +149,34 @@ export default function Events() {
   const navigate = useNavigate();
 
   const upcomingEvents = [
+    {
+      id: 8,
+      title: "From Campus to Enterprise",
+      subtitle: "Building a Career in Generative AI & Digital Transformation",
+      series: "SUI-IEEE PATHX SERIES",
+      date: "28 November 2026",
+      time: "5:00 PM onwards (IST)",
+      location: "Online — Google Meet",
+      type: "IEEE PathX",
+      speaker: "Vishnuprasad T V",
+      speakerRole: "Manager, Generative AI Consulting, EY (Big 4)",
+      speakerImage: "/speakers/Vishnuprasad%20T%20V.jpeg",
+      speakerCredentials: [
+        "Certified Azure AI Engineer",
+        "Enterprise Gen AI Specialist",
+        "10+ Years in IT",
+        "Driving AI-driven transformation for global clients",
+        "Working with global banks on AI digital transformation"
+      ],
+      certificate: "Certificate of Participation",
+      attendees: null,
+      maxAttendees: null,
+      description: "Join us for an insightful online session in the SUI-IEEE PATHX Series, 'From Campus to Enterprise: Building a Career in Generative AI & Digital Transformation.' Featuring Vishnuprasad T V, Manager, Generative AI Consulting at EY (Big 4), this session focuses on navigating the transition from campus to the enterprise world and exploring career opportunities and professional development in Generative AI and digital transformation. Mode: Online via Google Meet. Certificate of Participation will be provided.",
+      status: "Registration Open",
+      registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSdI-Z5PlM1n8F6QZ8WFadxkruYb9hXVN4Et6kjq1w_CKTcVvw/viewform?usp=header",
+      speakerLinkedinUrl: "https://www.linkedin.com/in/vishnuprasad-cmd",
+      whatsappCommunityUrl: "https://chat.whatsapp.com/JgWN1dVi228DWgN98xS8X6"
+    },
     {
       id: 3,
       title: "Tvishi 2.0",
@@ -459,61 +488,184 @@ export default function Events() {
               {upcomingEvents.map((event) => (
                 <Card
                   key={event.id}
-                  className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md border border-gray-200 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
                 >
                   <CardHeader>
                     <div className="flex justify-between items-start mb-3">
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         <Badge className={getTypeColor(event.type)}>{event.type}</Badge>
                         <Badge className={getStatusColor(event.status)}>{event.status}</Badge>
+                        {"series" in event && event.series && (
+                          <Badge variant="outline" className="text-xs font-semibold border-blue-500/40 text-blue-600 dark:text-blue-400">
+                            {event.series}
+                          </Badge>
+                        )}
                       </div>
                     </div>
-                    <CardTitle className="text-2xl font-semibold text-gray-900 dark:text-white mb-2">
+                    <CardTitle className="text-2xl font-semibold text-gray-900 dark:text-white mb-1">
                       {event.title}
                     </CardTitle>
+                    {"subtitle" in event && event.subtitle && (
+                      <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 mb-2">
+                        {event.subtitle}
+                      </p>
+                    )}
+
+                    {"registrationUrl" in event && event.registrationUrl && event.status === "Registration Open" && (
+                      <div className="pt-2 pb-2">
+                        <Button
+                          asChild
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all font-semibold shadow-md"
+                        >
+                          <a
+                            href={event.registrationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            Register Now
+                          </a>
+                        </Button>
+                      </div>
+                    )}
+
                     <CardDescription className="text-base text-gray-700 dark:text-gray-300">
                       {event.description}
                     </CardDescription>
                   </CardHeader>
 
                   <CardContent>
-                    <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+                      {"speaker" in event && event.speaker && (
+                        <div className="flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl bg-gray-50/80 dark:bg-gray-800/80 border border-gray-200/80 dark:border-gray-700/80">
+                          {"speakerImage" in event && event.speakerImage ? (
+                            <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden flex-shrink-0 border-2 border-blue-500/30 shadow-md bg-gray-200 dark:bg-gray-700">
+                              <img
+                                src={event.speakerImage}
+                                alt={event.speaker}
+                                className="w-full h-full object-cover object-top"
+                                onError={(e) => {
+                                  (e.currentTarget as HTMLImageElement).style.display = "none";
+                                  const fallback = e.currentTarget.parentElement?.querySelector(".speaker-fallback");
+                                  if (fallback) (fallback as HTMLElement).style.display = "flex";
+                                }}
+                              />
+                              <div
+                                className="speaker-fallback hidden w-full h-full items-center justify-center bg-gradient-to-br from-blue-600 to-purple-600 text-white font-bold text-xl"
+                              >
+                                {event.speaker.split(" ").map((n: string) => n[0]).slice(0, 2).join("")}
+                              </div>
+                            </div>
+                          ) : (
+                            <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center flex-shrink-0 text-blue-600 dark:text-blue-400">
+                              <User className="h-6 w-6" />
+                            </div>
+                          )}
+
+                          <div className="flex-1 min-w-0">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+                              Featured Speaker
+                            </span>
+                            <h3 className="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+                              {event.speaker}
+                            </h3>
+                            {"speakerRole" in event && event.speakerRole && (
+                              <p className="text-sm font-medium text-gray-600 dark:text-gray-300 mt-0.5">
+                                {event.speakerRole}
+                              </p>
+                            )}
+
+                            {"speakerCredentials" in event && Array.isArray(event.speakerCredentials) && event.speakerCredentials.length > 0 && (
+                              <div className="mt-2.5 pt-2 border-t border-gray-200/60 dark:border-gray-700/60">
+                                <p className="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                                  Credentials & Experience:
+                                </p>
+                                <ul className="text-xs text-gray-600 dark:text-gray-300 space-y-1">
+                                  {event.speakerCredentials.map((cred: string, i: number) => (
+                                    <li key={i} className="flex items-start gap-1.5">
+                                      <span className="text-blue-500 font-bold">•</span>
+                                      <span>{cred}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      )}
                       <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4 text-blue-500" />
+                        <Calendar className="h-4 w-4 text-blue-500 flex-shrink-0" />
                         <span>{event.date}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Clock className="h-4 w-4 text-blue-500" />
+                        <Clock className="h-4 w-4 text-blue-500 flex-shrink-0" />
                         <span>{event.time}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <MapPin className="h-4 w-4 text-blue-500" />
+                        <MapPin className="h-4 w-4 text-blue-500 flex-shrink-0" />
                         <span>{event.location}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Users className="h-4 w-4 text-blue-500" />
-                        <span>
-                          {event.attendees}/{event.maxAttendees} registered
-                        </span>
-                      </div>
+                      {"certificate" in event && event.certificate && (
+                        <div className="flex items-center space-x-2">
+                          <Award className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                          <span>{event.certificate}</span>
+                        </div>
+                      )}
+                      {(event.attendees || event.maxAttendees) && (
+                        <div className="flex items-center space-x-2">
+                          <Users className="h-4 w-4 text-blue-500 flex-shrink-0" />
+                          <span>
+                            {event.attendees}/{event.maxAttendees} registered
+                          </span>
+                        </div>
+                      )}
 
-                      {event.registrationOpens && event.registrationCloses ? (
+                      {"registrationOpens" in event && "registrationCloses" in event && event.registrationOpens && event.registrationCloses ? (
                         <RegistrationButton
                           registrationUrl={event.registrationUrl}
                           opensAt={event.registrationOpens}
                           closesAt={event.registrationCloses}
                         />
-                      ) : event.status === "Registration Open" && (
-                        <div className="pt-4">
-                          <Button
-                            onClick={() => {
-                              window.location.href = event.registrationUrl || "https://forms.gle/bGSuX1BBJz1QW1Gi9";
-                            }}
-                            className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:opacity-90 transition-all">
-                            Register Now
-                          </Button>
+                      ) : null}
+
+                      {("speakerLinkedinUrl" in event && event.speakerLinkedinUrl || "whatsappCommunityUrl" in event && event.whatsappCommunityUrl) && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2">
+                          {"speakerLinkedinUrl" in event && event.speakerLinkedinUrl && (
+                            <Button
+                              variant="outline"
+                              asChild
+                              className="w-full border-blue-500/30 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/40 transition-all"
+                            >
+                              <a
+                                href={event.speakerLinkedinUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2"
+                              >
+                                <FaLinkedin className="h-4 w-4 text-[#0077B5]" />
+                                <span>Connect with Speaker</span>
+                              </a>
+                            </Button>
+                          )}
+                          {"whatsappCommunityUrl" in event && event.whatsappCommunityUrl && (
+                            <Button
+                              variant="outline"
+                              asChild
+                              className="w-full border-green-500/30 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/40 transition-all"
+                            >
+                              <a
+                                href={event.whatsappCommunityUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2"
+                              >
+                                <FaWhatsapp className="h-4 w-4 text-[#25D366]" />
+                                <span>Join WhatsApp</span>
+                              </a>
+                            </Button>
+                          )}
                         </div>
                       )}
+
                       {event.status === "Registration closed" && (
                         <div className="pt-4">
                           <Button
@@ -548,7 +700,7 @@ export default function Events() {
                         </div>
                       )}
 
-                      {event.feedbackOpens && event.feedbackCloses && event.feedbackUrl && (
+                      {"feedbackOpens" in event && "feedbackCloses" in event && "feedbackUrl" in event && event.feedbackOpens && event.feedbackCloses && event.feedbackUrl && (
                         <FeedbackButton
                           id={event.feedbackId}
                           feedbackUrl={event.feedbackUrl}
