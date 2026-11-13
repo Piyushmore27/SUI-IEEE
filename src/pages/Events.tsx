@@ -237,7 +237,7 @@ export default function Events() {
       time: "10:30 AM – 12:00 Noon",
       location: "IMS Seminar Hall, SAGE University Indore",
       type: "Seminar & Celebration",
-      attendees: null,
+      attendees: "100+ Attendees",
       maxAttendees: null,
       description: "An IEEE Day special session focused on cybersecurity awareness, featuring Mr. Rajesh Dandotiya (ADCP), Additional Deputy Commissioner of Police, Crime Branch, Indore. The session covered emerging cyber threats, online scams, data protection, and practical ways to improve digital safety. Special highlight: IEEE Badge Distribution & Oath Ceremony.",
       status: "Completed"
@@ -753,14 +753,16 @@ export default function Events() {
                         <MapPin className="h-4 w-4 text-blue-500" />
                         <span>{event.location}</span>
                       </div>
-                      <div className="flex items-center space-x-2">
-                        <Users className="h-4 w-4 text-blue-500" />
-                        <span>
-                          {typeof event.attendees === "string" && event.attendees.toLowerCase().includes("attendee")
-                            ? event.attendees
-                            : `${event.attendees} attendees`}
-                        </span>
-                      </div>
+                      {event.attendees && (
+                        <div className="flex items-center space-x-2">
+                          <Users className="h-4 w-4 text-blue-500" />
+                          <span>
+                            {typeof event.attendees === "string" && event.attendees.toLowerCase().includes("attendee")
+                              ? event.attendees
+                              : `${event.attendees} attendees`}
+                          </span>
+                        </div>
+                      )}
 
                       {event.outcomes && (
                         <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
