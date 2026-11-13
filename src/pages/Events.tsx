@@ -178,18 +178,6 @@ export default function Events() {
       whatsappCommunityUrl: "https://chat.whatsapp.com/JgWN1dVi228DWgN98xS8X6"
     },
     {
-      id: 3,
-      title: "Tvishi 2.0",
-      date: "Coming Soon...",
-      time: "9:00 AM - 6:00 PM",
-      location: "Sage University Indore",
-      type: "hackthon",
-      attendees: null,
-      maxAttendees: null,
-      description: "24-hour hackathon focused on developing IoT solutions for smart cities and sustainable development.",
-      status: "Coming Soon"
-    },
-    {
       id: 4,
       title: "WCCEST-26 International Conference",
       date: "comming soon...",

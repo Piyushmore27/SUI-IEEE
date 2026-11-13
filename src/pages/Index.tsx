@@ -30,12 +30,6 @@ export default function Index() {
       speakerLinkedinUrl: "https://www.linkedin.com/in/vishnuprasad-cmd",
       whatsappCommunityUrl: "https://chat.whatsapp.com/JgWN1dVi228DWgN98xS8X6"
     },
-    {
-      title: "Tvishi 2.0",
-      date: "Coming Soon...",
-      description: "24-hour hackathon focused on developing IoT solutions for smart cities and sustainable development.",
-      type: "hackthon",
-    },
   ];
 
   const achievements = [
@@ -98,7 +92,7 @@ export default function Index() {
             <div className="mt-4 w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          <div className={`grid grid-cols-1 ${upcomingEvents.length > 1 ? 'md:grid-cols-2 lg:grid-cols-3' : 'max-w-2xl mx-auto'} gap-8 mb-12`}>
             {upcomingEvents.map((event, index) => (
               <Card
                 key={index}
