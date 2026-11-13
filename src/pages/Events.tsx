@@ -214,7 +214,8 @@ export default function Events() {
       attendees: "50+ Attendees",
       maxAttendees: null,
       description: "An expert talk focused on helping students transition from campus to career by understanding opportunities, building confidence, and standing out professionally. Deepika Sharma, CEO & Founder of CrftInfrai Softwares India LLP, will share practical perspectives on career development and professional growth. The session will also include an interactive Open Q&A.",
-      status: "Completed"
+      status: "Completed",
+      youtubeUrl: "https://www.youtube.com/live/s75kAsInCyw?si=iNinww-6Cd6FEk-h"
     },
     {
       id: 6,
